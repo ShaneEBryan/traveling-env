@@ -1,0 +1,42 @@
+{
+    "name": "shaneebryan/traveling-env",
+    "description": "Encyrpts and decyrpts Laravel .env files for multiple environments using AWS Key Management and Parameter Store",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Shane E. Bryan",
+            "email": "shane.bryan@billowsc3.com"
+        }
+    ],
+    "require": {
+        "stechstudio/laravel-env-security": "dev-master"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "repositories": [{
+          "type": "vcs",
+          "url": "https://github.com/ShaneEBryan/laravel-env-security"
+        }
+      ],
+    "autoload": {
+        "psr-4": {
+            "ShaneEBryan\\TravelingEnv\\": "src",
+            "ShaneEBryan\\TravelingEnv\\Tests\\": "tests"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+          "ShaneEBryan\\TravelingEnv\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "ShaneEBryan\\TravelingEnv\\TravelingEnvServiceProivder"
+            ]
+        }
+    }
+}
