@@ -23,8 +23,7 @@
       ],
     "autoload": {
         "psr-4": {
-            "ShaneEBryan\\TravelingEnv\\": "src",
-            "ShaneEBryan\\TravelingEnv\\Tests\\": "tests"
+            "ShaneEBryan\\TravelingEnv\\": "src"
         }
     },
     "autoload-dev": {
@@ -35,7 +34,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ShaneEBryan\\TravelingEnv\\TravelingEnvServiceProivder"
+                "ShaneEBryan\\TravelingEnv\\TravelingEnvServiceProvider"
             ]
         }
     }

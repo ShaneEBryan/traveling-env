@@ -2,25 +2,34 @@
 
 namespace ShaneEBryan\TravelingEnv\Tests;
 
-use ShaneEBryan\TravelingEnv\TravelingEnvServiceProivder;
+use Orchestra\Testbench\TestCase as BaseTestCase;
+use ShaneEBryan\TravelingEnv\TravelingEnvServiceProvider;
 
-class TestCase extends \Orchestra\Testbench\TestCase
+class TestCase extends BaseTestCase
 {
-  public function setUp(): void
+  protected function setUp(): void
   {
-    parent::setUp();
-    // additional setup
+      parent::setUp();
+      // additional setup
   }
 
   protected function getPackageProviders($app)
   {
-    return [
-      TravelingEnvServiceProivder::class,
-    ];
+      return [
+         TravelingEnvServiceProvider::class,
+      ];
   }
 
   protected function getEnvironmentSetUp($app)
   {
-    // perform environment setup
+      // perform environment setup
   }
+
+  protected function tearDown(): void
+  {
+      parent::teardown();
+
+  }
+
+
 }

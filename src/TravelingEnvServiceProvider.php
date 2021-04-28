@@ -3,8 +3,9 @@
 namespace ShaneEBryan\TravelingEnv;
 
 use Illuminate\Support\ServiceProvider;
+use ShaneEBryan\TravelingEnv\Console\PublishEnvSeed;
 
-class TravelingEnvServiceProivder extends ServiceProvider
+class TravelingEnvServiceProvider extends ServiceProvider
 {
   public function register()
   {
@@ -15,6 +16,10 @@ class TravelingEnvServiceProivder extends ServiceProvider
   public function boot()
   {
       if ($this->app->runningInConsole()) {
+          //Registering artisan CLI commands
+          $this->commands([
+              PublishEnvSeed::class,
+          ]);
 
           $this->publishes([
             __DIR__.'/../config/config.php' => config_path('traveling-env.php'),
